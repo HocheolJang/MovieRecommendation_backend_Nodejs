@@ -1,0 +1,18 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["uncheckedScalarInputs"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model movies {
+  id           Int       @id @default(autoincrement())
+  title        String?
+  release_date DateTime?
+  rating       Float?
+  poster       String?
+  desc         String?
+}
